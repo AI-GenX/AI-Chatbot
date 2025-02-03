@@ -129,6 +129,7 @@ body {
 
 /* Input Field */
 #user-input {
+  margin-top:10px;
   width:100%;
   flex-grow: 1;
   padding: 0.8rem;
