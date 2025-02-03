@@ -28,12 +28,13 @@ document.addEventListener("DOMContentLoaded", () => {
     // Function to generate bot response
     function generateBotResponse(userMessage) {
         let botResponse = "I'm just a simple bot! Try saying 'hello' or 'help'.";
-        
         const responses = {
             hello: "Hi there! How can I assist you today?",
             help: "Sure! You can ask me about anything. Try 'What can you do?'",
             bye: "Goodbye! Have a great day!",
+            "what is your name": "I'm Chatbot! What's yours?",
         };
+        
 
         userMessage = userMessage.toLowerCase(); // Normalize input
 

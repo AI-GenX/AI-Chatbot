@@ -85,10 +85,16 @@ AI-Chatbot/
 
 ## Example Interaction
 - **User:** Hello
-- **Chatbot:** Hi there!
+- **Chatbot:** Hi there! How can I assist you today?
 
 - **User:** What is your name?
 - **Chatbot:** I'm Chatbot! What's yours?
+
+- **User:** help
+- **Chatbot:** Sure! You can ask me about anything. Try 'What can you do?'
+
+- **User:**  bye
+- **Chatbot:** Goodbye! Have a great day!
 
 ## Future Enhancements
 - Add natural language processing (NLP) for more complex conversations.
