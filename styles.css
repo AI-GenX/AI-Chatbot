@@ -118,6 +118,30 @@ body {
   color: var(--accent-color);
 }
 
+/* mic-icon */
+.container {
+  text-align: left;
+  display:inline-block;
+}
+
+#micIcon {
+  /* font-size: 60px; */
+  color: #4CAF50;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#micIcon:hover {
+  color: white;
+}
+
+#transcription {
+  margin-top: 20px;
+  /* font-size: 18px; */
+  color: #333;
+}
+
+
 /* Input Area - Fixed to the bottom */
 #chat-input-area {
   display: flex;
@@ -161,7 +185,6 @@ body {
   background: #5a4de0;
   box-shadow: 0 4px 12px rgba(106, 90, 205, 0.5);
 }
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   #chat-container {

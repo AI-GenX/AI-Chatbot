@@ -57,3 +57,49 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 });
 
+// Mic-js
+const micIcon = document.getElementById('micIcon');
+const userInput = document.getElementById('user-input');
+const transcriptionDisplay = document.getElementById('transcription');
+
+let recognition;
+
+if ('webkitSpeechRecognition' in window) {
+    recognition = new webkitSpeechRecognition();
+    recognition.lang = 'en-US';
+    recognition.continuous = true; // This allows continuous speech recognition
+    recognition.interimResults = true; // This will give real-time results
+
+    recognition.onstart = function() {
+        transcriptionDisplay.textContent = 'Listening...';
+        micIcon.classList.remove('fa-microphone'); // Change to active mic icon
+        micIcon.classList.add('fa-microphone-alt');
+    };
+
+    recognition.onresult = function(event) {
+        let transcript = '';
+        for (let i = event.resultIndex; i < event.results.length; i++) {
+            transcript += event.results[i][0].transcript;
+        }
+
+        // Display the result in the user input field
+        userInput.value = transcript;  // Set the transcript to user input field
+    };
+
+    recognition.onerror = function(event) {
+        transcriptionDisplay.textContent = 'Error occurred: ' + event.error;
+    };
+
+    recognition.onend = function() {
+        transcriptionDisplay.textContent = 'Stopped listening.';
+        micIcon.classList.remove('fa-microphone-alt');
+        micIcon.classList.add('fa-microphone');
+    };
+}
+
+// Activate speech recognition when mic icon is clicked
+micIcon.addEventListener('click', function() {
+    if (recognition && recognition.start) {
+        recognition.start();
+    }
+});
