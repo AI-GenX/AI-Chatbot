@@ -107,41 +107,6 @@ body {
   transform: scale(1.05);
 }
 
-/* Message Separator */
-.user-message:not(:first-child)::before {
-  content: '\2942';
-  position: absolute;
-  top: -0.8rem;
-  left: 50%;
-  transform: translateX(-50%);
-  font-size: 1rem;
-  color: var(--accent-color);
-}
-
-/* mic-icon */
-.container {
-  text-align: left;
-  display:inline-block;
-}
-
-#micIcon {
-  /* font-size: 60px; */
-  color: #4CAF50;
-  cursor: pointer;
-  transition: color 0.3s ease;
-}
-
-#micIcon:hover {
-  color: white;
-}
-
-#transcription {
-  margin-top: 20px;
-  /* font-size: 18px; */
-  color: #333;
-}
-
-
 /* Input Area - Fixed to the bottom */
 #chat-input-area {
   display: flex;
@@ -151,26 +116,48 @@ body {
   padding-top: 1rem;
 }
 
+/* Input Container */
+.input-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: relative;
+  background: var(--secondary-bg);
+  border: 1px solid var(--accent-color);
+  border-radius: var(--border-radius);
+  padding-right: 40px; /* Space for the microphone icon */
+}
+
 /* Input Field */
 #user-input {
-  margin-top:10px;
-  width:100%;
   flex-grow: 1;
   padding: 0.8rem;
-  border-radius: var(--border-radius);
-  border: 1px solid var(--accent-color);
-  transition: all 0.2s ease-in-out;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: var(--text-color);
 }
 
 #user-input:focus {
   outline: none;
-  border-color: var(--accent-color);
-  box-shadow: 0 0 8px var(--accent-color);
 }
 
-/* Send Button - Positioned at the bottom */
+/* Microphone Icon */
+#micIcon {
+  position: absolute;
+  right: 10px;
+  font-size: 20px;
+  color: var(--accent-color);
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+#micIcon:hover {
+  color: #5a4de0;
+}
+
+/* Send Button */
 #send-button {
-  margin-top:10px;
   padding: 0.8rem 1.2rem;
   border-radius: var(--border-radius);
   border: none;
@@ -185,10 +172,26 @@ body {
   background: #5a4de0;
   box-shadow: 0 4px 12px rgba(106, 90, 205, 0.5);
 }
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   #chat-container {
     width: 90%;
     height: 80vh;
+  }
+}
+
+@media (max-width: 600px) {
+  #chat-input-area {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .input-container {
+    width: 100%;
+  }
+
+  #send-button {
+    width: 100%;
   }
 }
