@@ -5,19 +5,18 @@
       <meta http-equiv="X-UA-Compatible" content="IE=edge" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-      <link rel="stylesheet" href="styles.css" />
+      <link rel="stylesheet" href="static/css/styles.css" />
       <title>Chat Bot</title>
     </head>
     <body>
       <div id="chat-container">
         <h1 id="chat-header">Welcome to Chat<span>BOT</span></h1>
         <div id="chat-history"></div>
-        <div>
-          <div class="container">
+        <div id="chat-input-area">
+          <div class="input-container">
+            <input autofocus type="text" id="user-input" placeholder="Type your message" aria-label="Message input" />
             <i id="micIcon" class="fas fa-microphone"></i>
-        </div>
-          <input autofocus type="text" id="user-input" placeholder="Type your message" aria-label="Message input"
-          />
+          </div>
           <button id="send-button" aria-label="Send message">Send</button>
         </div>
       </div>
